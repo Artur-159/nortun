@@ -1,0 +1,88 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.dropdown {
+  z-index: 10;
+  position: relative;
+  padding: 4px;
+  user-select: none;
+  color: colors.$white;
+
+  .dropdown_btn {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 6px;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    @media (max-width: 1200px) {
+      font-size: 12px;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+
+    .arrow_normal {
+      transition: transform 0.3s ease;
+      transform: rotate(0deg);
+    }
+  }
+
+  .show {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.3s;
+  }
+
+  .hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+
+  .dropdown_content {
+    position: absolute;
+    left: -20px;
+    top: 36px;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    border-top: none;
+    background-color: colors.$white;
+    padding: 4px;
+    overflow: hidden;
+    background: colors.$primary-blue;
+    min-width: 70px;
+    color: colors.$white;
+    font-size: 14px;
+
+    @media (max-width: 1200px) {
+      font-size: 12px;
+    }
+
+    .item {
+      padding: 8px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .active {
+    background-color: transparent;
+    border-radius: 12px 12px 0 0;
+  }
+}

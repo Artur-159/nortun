@@ -1,0 +1,25 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+@use "../../styles/colors";
+
+.footer {
+  background: colors.$dark-background;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+
+.container {
+  @include mixins.container();
+
+  @media (max-width: 1440) {
+    margin: 0 50px;
+  }
+
+  @media (max-width: variables.$tabletSize) {
+    margin: 0 30px;
+  }
+
+  @media (max-width: 950px) {
+    margin: 0 15px 0;
+  }
+}

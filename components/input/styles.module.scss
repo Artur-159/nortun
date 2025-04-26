@@ -1,0 +1,21 @@
+.error_message {
+  display: inline-block;
+  color: red;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+// .input:-webkit-autofill,
+// .input:-webkit-autofill:hover,
+// .input:-webkit-autofill:focus,
+// .input:-webkit-autofill:active {
+//   background-clip: text;
+//   background-color: inherit;
+//   color: inherit;
+//   transition: background-color 5000s ease-in-out 0s;
+// }
+//! autocomplete styles
+
+.input {
+  color: white;
+}

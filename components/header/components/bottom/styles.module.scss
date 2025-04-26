@@ -1,0 +1,244 @@
+@use "../../../../styles/mixins";
+@use "../../../../styles/variables";
+@use "../../../../styles/colors";
+
+.container {
+  @include mixins.container();
+  padding: 16px 0;
+
+  @media (max-width: variables.$tabletSize) {
+    padding: 16px 0;
+  }
+
+  @media (max-width: 1360px) {
+    margin: 0 50px auto;
+  }
+
+  @media (max-width: variables.$tabletSize) {
+    justify-content: unset;
+    margin: 0 30px auto;
+  }
+
+  @media (max-width: 950px) {
+    margin: 0 15px auto;
+  }
+
+  .action_block {
+    display: grid;
+    grid-template-columns: 164px 171px 1fr 1fr;
+    gap: 16px 40px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 164px 171px 1fr 130px;
+    }
+
+    @media (max-width: variables.$tabletSize) {
+      grid-template-columns: 164px 171px 1fr 102px;
+    }
+
+    @media (max-width: 950px) {
+      grid-template-columns: 65px 1fr;
+      gap: 16px 0;
+
+      > button {
+        order: 3;
+        width: 48px;
+        padding: 12px;
+        min-width: unset;
+
+        span {
+          left: 14px;
+        }
+      }
+
+      .search {
+        order: 4;
+        gap: 20px;
+        position: relative;
+
+        .search_icon {
+          position: absolute;
+          left: 20px;
+        }
+      }
+    }
+
+    .header_logo {
+      margin-top: 5px;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+
+  .search_inp {
+    width: 100%;
+    min-width: 523px;
+    height: 48px;
+    padding: 5px 40px 5px 64px;
+    font-size: 16px;
+    background: colors.$background;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+
+    @media (min-width: 1300px) and (max-width: 1400px) {
+      min-width: 450px;
+    }
+
+    @media (max-width: 1300) {
+      min-width: 350px;
+    }
+
+    @media (max-width: 768px) {
+      min-width: unset;
+    }
+  }
+
+  .search_icon {
+    position: relative;
+    z-index: 1;
+    margin-right: -40px;
+  }
+}
+
+.icons_block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0 35px;
+
+  @media (max-width: variables.$tabletSize) {
+    margin-left: auto;
+    gap: 24px;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .close_icon {
+    display: none;
+  }
+}
+
+.login_modal {
+  .inner_modal {
+    position: relative;
+    background: colors.$white;
+    padding: 40px;
+    min-width: 500px;
+    border-radius: 15px;
+
+    @media (max-width: variables.$mobileSize) {
+      min-width: 450px;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 576px) {
+      min-width: 320px;
+      padding: 20px;
+    }
+
+    .modal_close_btn {
+      position: absolute;
+      top: 16px;
+      right: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 16px;
+
+      input {
+        margin-bottom: 16px;
+        height: 48px;
+        padding: 5px 15px;
+        font-size: 14px;
+        line-height: 24px;
+        outline: none;
+        border: 1px solid colors.$middle-blue;
+        border-radius: 15px;
+      }
+
+      > a {
+        margin-left: auto;
+        font-size: 12px;
+        color: colors.$middle-blue;
+        transition: all 0.3s;
+        border-bottom: 1px solid;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      .btn_block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+
+        @media (max-width: 576px) {
+          margin-top: 20px;
+        }
+
+        > button,
+        a {
+          @include mixins.flexCenter(center);
+          font-size: 16px;
+          width: 100%;
+          height: 48px;
+          padding: 5px 15px;
+          border: none;
+          border-radius: 15px;
+          cursor: pointer;
+
+          &:first-child {
+            background: colors.$primary-blue;
+            color: colors.$white;
+            transition: all 0.3s;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+
+          &:last-child {
+            background: transparent;
+            border: 1px solid colors.$primary-blue;
+            transition: all 0.3s;
+
+            &:hover {
+              background: colors.$primary-blue;
+              color: colors.$white;
+            }
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+}

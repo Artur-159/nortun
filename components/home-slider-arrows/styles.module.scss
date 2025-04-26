@@ -1,0 +1,45 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+@use "../../styles/colors";
+
+.slider_btn-prev,
+.slider_btn-next {
+  position: absolute;
+  top: 55%;
+  z-index: 100;
+  cursor: pointer;
+  transition: 0.6s;
+
+  @media (max-width: variables.$tabletSize) {
+    top: 5%;
+  }
+
+  @media (max-width: 620px) {
+    display: none;
+  }
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+.slider_btn-next {
+  right: -50px;
+  transform: translateY(-50%);
+
+  @media (max-width: variables.$tabletSize) {
+    right: -5px;
+    top: 17px;
+  }
+}
+
+.slider_btn-prev {
+  left: -56px;
+  transform: translateY(-50%) rotate(180deg);
+
+  @media (max-width: variables.$tabletSize) {
+    right: 56px !important ;
+    left: unset;
+    top: 14px;
+  }
+}

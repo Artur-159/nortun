@@ -1,0 +1,43 @@
+@use "../../styles/colors";
+
+.scrollToTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  transform: rotate(90deg);
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(12, 12, 12, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  svg,
+  path {
+    transition: 0.6s;
+  }
+
+  &:hover {
+    svg {
+      scale: 1.1;
+
+      path {
+        fill: $rougeRed;
+      }
+    }
+  }
+}
+
+.scrollToTop.visible {
+  opacity: 1;
+  visibility: visible;
+}

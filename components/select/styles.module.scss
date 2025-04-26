@@ -1,0 +1,61 @@
+@use "../../styles/colors";
+
+.wrapper {
+  position: relative;
+
+  &.open {
+    .options {
+      opacity: 1;
+      max-height: 300px;
+      overflow: visible;
+    }
+
+    .select_arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .select_arrow {
+    transition: all 0.3s;
+  }
+
+  .select_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .selected {
+      color: colors.$white;
+      opacity: 0.5;
+    }
+  }
+
+  .options {
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid colors.$gray-background;
+    background: colors.$middle-blue;
+    z-index: 99999;
+    border-radius: 4px;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+
+    li {
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background: colors.$gray-background;
+      }
+    }
+  }
+}
