@@ -1,0 +1,318 @@
+@use "../../../../styles/variables";
+@use "../../../../styles/mixins";
+@use "../../../../styles/colors";
+
+.available_block {
+  margin: 200px 0;
+  display: flex;
+  position: relative;
+  background: colors.$dark-background;
+
+  @media (max-width: variables.$tabletSize) {
+    margin: 120px 0;
+  }
+
+  @media (max-width: variables.$mobileSize) {
+    margin: 80px 0;
+  }
+
+  .container {
+    @include mixins.container();
+
+    @media (max-width: variables.$tabletSize) {
+      margin: 40px 30px 0;
+    }
+
+    .inner_block {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 40px;
+      margin: 0 -40px;
+
+      @media (min-width: variables.$tabletSize) and (max-width: 1240px) {
+        margin: 0 -20px;
+      }
+
+      @media (max-width: 576px) {
+        padding-top: 0;
+      }
+
+      .left_block {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 20px;
+
+        @media (max-width: variables.$tabletSize) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0;
+        }
+
+        @media (min-width: variables.$tabletSize) and (max-width: 1240px) {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .block_description {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 150%;
+          margin-top: 40px;
+          display: block;
+          opacity: 0.6;
+
+          @media (max-width: 480px) {
+            display: none;
+          }
+        }
+
+        .block_workingText {
+          font-size: 16px;
+          line-height: 150%;
+          margin-top: 24px;
+          opacity: 0.6;
+
+          @media (max-width: 480px) {
+            display: none;
+          }
+        }
+
+        .working_days,
+        .sunday_available,
+        .extended_days,
+        .extended_sunday {
+          display: flex;
+          justify-content: space-between;
+          opacity: 0.6;
+          font-size: 14px;
+          line-height: 12px;
+        }
+
+        .working_days {
+          margin-top: 24px;
+        }
+
+        .sunday_available {
+          margin-top: 20px;
+        }
+
+        .location_block {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: colors.$middle-blue;
+          font-size: 16px;
+          line-height: 150%;
+          margin-top: 16px;
+
+          @media (max-width: 480px) {
+            font-size: 12px;
+            line-height: 140%;
+          }
+        }
+
+        .extended_days {
+          margin-top: 24px;
+        }
+
+        .extended_sunday {
+          margin-top: 20px;
+        }
+
+        .contact_btn {
+          padding: 13px 30px;
+          margin-top: 60px;
+          border-radius: 4px;
+          font-size: 16px;
+          background: colors.$primary-blue;
+          color: colors.$white;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      .right_block {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 20px;
+        position: relative;
+
+        @media (max-width: variables.$tabletSize) {
+          flex: 0 0 70%;
+          max-width: 70%;
+          margin: 70px auto 0;
+          padding: 0;
+        }
+
+        @media (max-width: 660px) {
+          flex: 0 0 90%;
+          max-width: 90%;
+        }
+
+        @media (max-width: 460px) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        @media (min-width: variables.$tabletSize) and (max-width: 1200px) {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .images_block {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+          position: relative;
+
+          @media (max-width: 460px) {
+            gap: 5px;
+          }
+
+          img {
+            display: block;
+            border-radius: 8px;
+            height: auto;
+            width: 100%;
+
+            &:last-child {
+              margin-left: auto;
+              margin-top: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .absolute_block {
+    position: absolute;
+    top: -10px;
+    right: 40px;
+    min-width: 265px;
+
+    @media (max-width: variables.$tabletSize) {
+      top: 33px;
+      right: 15px;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 950px) {
+      top: 22px;
+      right: -5px;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 860px) {
+      top: -10px;
+      right: -10px;
+      transform: scale(1);
+    }
+
+    @media (max-width: 780px) {
+      top: -10px;
+      right: -20px;
+      transform: scale(1);
+    }
+
+    @media (max-width: 600px) {
+      top: -25px;
+      right: -25px;
+      transform: scale(0.9);
+    }
+
+    @media (max-width: 560px) {
+      top: -50px;
+      right: -35px;
+      transform: scale(0.8);
+    }
+
+    @media (max-width: 460px) {
+      top: -45px;
+      right: -47px;
+      transform: scale(0.8);
+    }
+
+    @media (max-width: 400px) {
+      transform: scale(0.7);
+    }
+
+    @media (max-width: 360px) {
+      top: -70px;
+      right: -65px;
+      transform: scale(0.6);
+    }
+
+    .inner_block {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      padding: 63px 31px;
+      gap: 75px;
+      border-radius: 4px;
+      background: colors.$secondary-red;
+      color: colors.$white;
+
+      @media (min-width: 1024px) and (max-width: 1100px) {
+        height: 320px !important;
+      }
+
+      @media (max-width: 1200px) {
+        width: 300px;
+        height: 350px;
+        gap: 35px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      @media (max-width: 1100px) {
+        gap: 23px;
+      }
+
+      @media (max-width: variables.$tabletSize) {
+        width: 300px;
+        height: auto !important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        gap: 60px;
+      }
+
+      .block_title {
+        font-weight: 500;
+        text-align: start;
+
+        @media (max-width: 480px) {
+          font-size: 20px;
+        }
+      }
+
+      .available_time {
+        font-size: 55px;
+        font-weight: 900;
+      }
+
+      .icon_block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .icon {
+          border: 1px solid;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}

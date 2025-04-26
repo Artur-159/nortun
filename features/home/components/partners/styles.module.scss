@@ -1,0 +1,116 @@
+@use "../../../../styles/colors";
+@use "../../../../styles/mixins";
+@use "../../../../styles/variables";
+
+.container {
+  @include mixins.container();
+  position: relative;
+
+  @media (max-width: 1360px) {
+    margin: 60px 100px 100px;
+  }
+
+  @media (max-width: variables.$tabletSize) {
+    justify-content: unset;
+    margin: 60px 30px auto;
+  }
+
+  @media (max-width: 950px) {
+    margin: 60px 15px auto;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 600;
+  }
+
+  .slider {
+    margin-bottom: 200px;
+    margin-top: 40px;
+
+    .slide_overlay {
+      border: 1px solid colors.$background;
+      border-radius: 4px;
+      background: linear-gradient(
+        to bottom,
+        colors.$background 56%,
+        colors.$light-gray 50%
+      );
+
+      .inner_block {
+        margin: 35px 40px;
+        @media (max-width: 400px) {
+          margin: 30px;
+        }
+
+        .top_block {
+          border-radius: 4px;
+          background: colors.$white;
+          height: 70px;
+
+          img {
+            width: auto;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+
+            @media (max-width: 768px) {
+              width: 175px;
+            }
+          }
+        }
+
+        .bottom_block {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 35px;
+
+          @media (max-width: 950px) {
+            justify-content: center;
+          }
+
+          .img_block {
+            border-radius: 4px;
+            background: colors.$white;
+            &:first-child {
+              margin-left: 0;
+            }
+
+            @media (max-width: 950px) {
+              margin: 0 10px;
+            }
+
+            img {
+              margin: 5px;
+
+              @media (max-width: 768px) {
+                width: 54px;
+                height: 60px;
+              }
+            }
+          }
+        }
+
+        .slide_link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 34px;
+
+          a {
+            text-align: center;
+            margin-right: 24px;
+            color: colors.$primary-blue;
+            transition: all 0.3s;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

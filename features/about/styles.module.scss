@@ -1,0 +1,56 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.wrapper {
+  margin: 50px auto 0 auto;
+  max-width: 1500px;
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .about {
+    @include mixins.container(1500px);
+    position: relative;
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+    padding: 0 6px;
+
+    @media (max-width: variables.$tabletSize) {
+      flex-direction: column;
+      gap: 36px;
+      padding: 0 22px;
+    }
+
+    @media (max-width: variables.$mobileSize) {
+      padding: 0 10px;
+    }
+
+    .about_img {
+      position: relative;
+      max-width: 730px;
+      height: 460px;
+    }
+
+    img {
+      transition: 0.6s;
+
+      @media (max-width: 1200px) {
+        width: 530px;
+      }
+
+      @media (max-width: variables.$tabletSize) {
+        width: 100%;
+      }
+    }
+
+    .about_desc {
+      @media (max-width: variables.$mobileSize) {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
